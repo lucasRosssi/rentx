@@ -25,7 +25,9 @@ import {
 	Price,
 	Accessories,
 	About,
+	Footer,
 } from './styles';
+import { Button } from '../../components/Button';
 
 export function CarDetails() {
 	return (
@@ -71,6 +73,10 @@ export function CarDetails() {
 					voluptatem esse!
 				</About>
 			</Content>
+
+			<Footer>
+				<Button title="Confirmar" onPress={() => {}} />
+			</Footer>
 		</Container>
 	);
 }
