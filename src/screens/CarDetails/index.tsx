@@ -1,8 +1,31 @@
 import React from 'react';
+
+import { Accessory } from '../../components/Accessory';
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
 
-import { Container, Header, CarImages } from './styles';
+import SpeedSvg from '../../assets/speed.svg';
+import AccelerationSvg from '../../assets/acceleration.svg';
+import ForceSvg from '../../assets/force.svg';
+import GasolineSvg from '../../assets/gasoline.svg';
+import ExchangeSvg from '../../assets/exchange.svg';
+import PeopleSvg from '../../assets/people.svg';
+
+import {
+	Container,
+	Header,
+	CarImages,
+	Content,
+	Details,
+	Description,
+	Brand,
+	Name,
+	Rent,
+	Period,
+	Price,
+	Accessories,
+	About,
+} from './styles';
 
 export function CarDetails() {
 	return (
@@ -18,6 +41,36 @@ export function CarDetails() {
 					]}
 				/>
 			</CarImages>
+
+			<Content>
+				<Details>
+					<Description>
+						<Brand>Lamborghini</Brand>
+						<Name>Huracan</Name>
+					</Description>
+
+					<Rent>
+						<Period>Ao dia</Period>
+						<Price>R$ 580</Price>
+					</Rent>
+				</Details>
+
+				<Accessories>
+					<Accessory name="380kM/h" icon={SpeedSvg} />
+					<Accessory name="3.2s" icon={AccelerationSvg} />
+					<Accessory name="800 HP" icon={ForceSvg} />
+					<Accessory name="Gasolina" icon={GasolineSvg} />
+					<Accessory name="Auto" icon={ExchangeSvg} />
+					<Accessory name="2 pessoas" icon={PeopleSvg} />
+				</Accessories>
+
+				<About>
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime quia
+					sit fuga, iusto soluta culpa molestias unde aliquid consequatur,
+					quaerat reiciendis dolorum illo at incidunt quibusdam nesciunt quam
+					voluptatem esse!
+				</About>
+			</Content>
 		</Container>
 	);
 }
