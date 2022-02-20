@@ -9,7 +9,7 @@ import {
 	Name,
 	About,
 	Rent,
-	Time,
+	Period,
 	Price,
 	Type,
 	CarImage,
@@ -19,7 +19,7 @@ interface CarData {
 	brand: string;
 	name: string;
 	rent: {
-		time: string;
+		period: string;
 		price: number;
 	};
 	thumbnail: string;
@@ -38,7 +38,7 @@ export function Car({ data }: CarProps) {
 
 				<About>
 					<Rent>
-						<Time>{data.rent.time}</Time>
+						<Period>{data.rent.period}</Period>
 						<Price>R$ {data.rent.price}</Price>
 					</Rent>
 

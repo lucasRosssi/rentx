@@ -42,7 +42,7 @@ export const Rent = styled.View`
 	margin-right: 24px;
 `;
 
-export const Time = styled.Text`
+export const Period = styled.Text`
 	font-family: ${({ theme }) => theme.fonts.secondary_500};
 	font-size: ${RFValue(10)}px;
 	color: ${({ theme }) => theme.colors.text_detail};
