@@ -116,7 +116,11 @@ export function SchedulingDetails() {
 			</Content>
 
 			<Footer>
-				<Button title="Confirmar" onPress={() => {}} />
+				<Button
+					title="Agendar agora"
+					color={theme.colors.success}
+					onPress={() => {}}
+				/>
 			</Footer>
 		</Container>
 	);
