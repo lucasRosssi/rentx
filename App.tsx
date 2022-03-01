@@ -9,12 +9,10 @@ import {
 } from '@expo-google-fonts/archivo';
 import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 
-import { Home } from './src/screens/Home';
 import theme from './src/styles/theme';
-import { CarDetails } from './src/screens/CarDetails';
-import { Scheduling } from './src/screens/Scheduling';
-import { SchedulingDetails } from './src/screens/SchedulingDetails';
-import { SchedulingComplete } from './src/screens/SchedulingComplete';
+
+import { Routes } from './src/routes';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -31,7 +29,9 @@ export default function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<SchedulingComplete />
+			<GestureHandlerRootView style={{ flex: 1 }}>
+				<Routes />
+			</GestureHandlerRootView>
 		</ThemeProvider>
 	);
 }
