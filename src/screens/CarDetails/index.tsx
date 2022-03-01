@@ -1,17 +1,13 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
+
+import { getAccessoryIcon } from '../../utils/getAccessoryIcon';
+import { CarDTO } from '../../dtos/CarDTO';
 
 import { Accessory } from '../../components/Accessory';
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
 import { Button } from '../../components/Button';
-
-import SpeedSvg from '../../assets/speed.svg';
-import AccelerationSvg from '../../assets/acceleration.svg';
-import ForceSvg from '../../assets/force.svg';
-import GasolineSvg from '../../assets/gasoline.svg';
-import ExchangeSvg from '../../assets/exchange.svg';
-import PeopleSvg from '../../assets/people.svg';
 
 import {
 	Container,
@@ -30,8 +26,22 @@ import {
 	Footer,
 } from './styles';
 
+interface Params {
+	car: CarDTO;
+}
+
 export function CarDetails() {
 	const navigation = useNavigation();
+	const route = useRoute();
+	const { car } = route.params as Params;
+
+	const carAccessories = car.accessories.map((accessory) => (
+		<Accessory
+			key={accessory.type}
+			name={accessory.name}
+			icon={getAccessoryIcon(accessory.type)}
+		/>
+	));
 
 	function handleConfirmRental() {
 		navigation.navigate('Scheduling');
@@ -44,41 +54,25 @@ export function CarDetails() {
 			</Header>
 
 			<CarImages>
-				<ImageSlider
-					imageUrl={[
-						'https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png',
-					]}
-				/>
+				<ImageSlider imageUrl={car.photos} />
 			</CarImages>
 
 			<Content>
 				<Details>
 					<Description>
-						<Brand>Lamborghini</Brand>
-						<Name>Huracan</Name>
+						<Brand>{car.brand}</Brand>
+						<Name>{car.name}</Name>
 					</Description>
 
 					<Rent>
-						<Period>Ao dia</Period>
-						<Price>R$ 580</Price>
+						<Period>{car.rent.period}</Period>
+						<Price>R$ {car.rent.price}</Price>
 					</Rent>
 				</Details>
 
-				<Accessories>
-					<Accessory name="380kM/h" icon={SpeedSvg} />
-					<Accessory name="3.2s" icon={AccelerationSvg} />
-					<Accessory name="800 HP" icon={ForceSvg} />
-					<Accessory name="Gasolina" icon={GasolineSvg} />
-					<Accessory name="Auto" icon={ExchangeSvg} />
-					<Accessory name="2 pessoas" icon={PeopleSvg} />
-				</Accessories>
+				<Accessories>{carAccessories}</Accessories>
 
-				<About>
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime quia
-					sit fuga, iusto soluta culpa molestias unde aliquid consequatur,
-					quaerat reiciendis dolorum illo at incidunt quibusdam nesciunt quam
-					voluptatem esse!
-				</About>
+				<About>{car.about}</About>
 			</Content>
 
 			<Footer>
