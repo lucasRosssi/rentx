@@ -1,4 +1,7 @@
 import React from 'react';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { useTheme } from 'styled-components';
+import { useNavigation } from '@react-navigation/native';
 
 import { Feather } from '@expo/vector-icons';
 import { Accessory } from '../../components/Accessory';
@@ -38,16 +41,19 @@ import {
 	RentalPriceQuota,
 	RentalPriceTotal,
 } from './styles';
-import { RFValue } from 'react-native-responsive-fontsize';
-import { useTheme } from 'styled-components';
 
 export function SchedulingDetails() {
 	const theme = useTheme();
+	const navigation = useNavigation();
+
+	function handleConfirmRental() {
+		navigation.navigate('SchedulingComplete');
+	}
 
 	return (
 		<Container>
 			<Header>
-				<BackButton onPress={() => {}} />
+				<BackButton />
 			</Header>
 
 			<CarImages>
@@ -119,7 +125,7 @@ export function SchedulingDetails() {
 				<Button
 					title="Agendar agora"
 					color={theme.colors.success}
-					onPress={() => {}}
+					onPress={handleConfirmRental}
 				/>
 			</Footer>
 		</Container>
