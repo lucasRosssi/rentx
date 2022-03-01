@@ -1,8 +1,8 @@
 import React from 'react';
 import { Pressable, PressableProps } from 'react-native';
 
+import { getAccessoryIcon } from '../../utils/getAccessoryIcon';
 import { CarDTO } from '../../dtos/CarDTO';
-import GasolineSvg from '../../assets/gasoline.svg';
 
 import {
 	Container,
@@ -22,6 +22,8 @@ interface CarProps extends PressableProps {
 }
 
 export function Car({ data, ...rest }: CarProps) {
+	const MotorIcon = getAccessoryIcon(data.fuel_type);
+
 	return (
 		<Pressable {...rest}>
 			<Container>
@@ -36,7 +38,7 @@ export function Car({ data, ...rest }: CarProps) {
 						</Rent>
 
 						<Type>
-							<GasolineSvg />
+							<MotorIcon />
 						</Type>
 					</About>
 				</Details>
