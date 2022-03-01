@@ -1,4 +1,5 @@
 import React from 'react';
+import { Pressable } from 'react-native';
 
 import { Container, Title } from './styles';
 
@@ -8,10 +9,12 @@ interface ButtonProps {
 	onPress: () => void;
 }
 
-export function Button({ title, color, onPress, ...rest }: ButtonProps) {
+export function Button({ title, color, onPress }: ButtonProps) {
 	return (
-		<Container {...rest} color={color}>
-			<Title>{title}</Title>
-		</Container>
+		<Pressable onPress={onPress}>
+			<Container color={color}>
+				<Title>{title}</Title>
+			</Container>
+		</Pressable>
 	);
 }
