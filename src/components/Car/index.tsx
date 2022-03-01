@@ -1,4 +1,5 @@
 import React from 'react';
+import { Pressable, PressableProps } from 'react-native';
 
 import GasolineSvg from '../../assets/gasoline.svg';
 
@@ -25,35 +26,37 @@ interface CarData {
 	thumbnail: string;
 }
 
-interface CarProps {
+interface CarProps extends PressableProps {
 	data: CarData;
 }
 
-export function Car({ data }: CarProps) {
+export function Car({ data, ...rest }: CarProps) {
 	return (
-		<Container>
-			<Details>
-				<Brand>{data.brand}</Brand>
-				<Name>{data.name}</Name>
+		<Pressable {...rest}>
+			<Container>
+				<Details>
+					<Brand>{data.brand}</Brand>
+					<Name>{data.name}</Name>
 
-				<About>
-					<Rent>
-						<Period>{data.rent.period}</Period>
-						<Price>R$ {data.rent.price}</Price>
-					</Rent>
+					<About>
+						<Rent>
+							<Period>{data.rent.period}</Period>
+							<Price>R$ {data.rent.price}</Price>
+						</Rent>
 
-					<Type>
-						<GasolineSvg />
-					</Type>
-				</About>
-			</Details>
+						<Type>
+							<GasolineSvg />
+						</Type>
+					</About>
+				</Details>
 
-			<CarImage
-				source={{
-					uri: data.thumbnail,
-				}}
-				resizeMode="contain"
-			/>
-		</Container>
+				<CarImage
+					source={{
+						uri: data.thumbnail,
+					}}
+					resizeMode="contain"
+				/>
+			</Container>
+		</Pressable>
 	);
 }
