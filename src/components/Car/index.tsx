@@ -1,6 +1,7 @@
 import React from 'react';
 import { Pressable, PressableProps } from 'react-native';
 
+import { CarDTO } from '../../dtos/CarDTO';
 import GasolineSvg from '../../assets/gasoline.svg';
 
 import {
@@ -16,18 +17,8 @@ import {
 	CarImage,
 } from './styles';
 
-interface CarData {
-	brand: string;
-	name: string;
-	rent: {
-		period: string;
-		price: number;
-	};
-	thumbnail: string;
-}
-
 interface CarProps extends PressableProps {
-	data: CarData;
+	data: CarDTO;
 }
 
 export function Car({ data, ...rest }: CarProps) {
