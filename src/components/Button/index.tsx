@@ -1,18 +1,17 @@
 import React from 'react';
-import { Pressable } from 'react-native';
+import { Pressable, PressableProps } from 'react-native';
 
 import { Container, Title } from './styles';
 
-interface ButtonProps {
+interface ButtonProps extends PressableProps {
 	title: string;
 	color?: string;
-	onPress: () => void;
 }
 
-export function Button({ title, color, onPress }: ButtonProps) {
+export function Button({ title, color, disabled, ...rest }: ButtonProps) {
 	return (
-		<Pressable onPress={onPress}>
-			<Container color={color}>
+		<Pressable {...rest}>
+			<Container color={color} enabled={!disabled}>
 				<Title>{title}</Title>
 			</Container>
 		</Pressable>
