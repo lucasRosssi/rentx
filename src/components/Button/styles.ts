@@ -8,6 +8,7 @@ interface Props {
 
 export const Container = styled(RectButton)<Props>`
 	width: 100%;
+	height: ${RFValue(60)}px;
 
 	padding: 19px;
 	align-items: center;
