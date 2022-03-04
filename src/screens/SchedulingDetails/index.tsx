@@ -56,6 +56,7 @@ export function SchedulingDetails() {
 	const [rentalPeriod, setRentalPeriod] = useState<RentalPeriod>(
 		{} as RentalPeriod
 	);
+	const [loading, setLoading] = useState(false);
 
 	const theme = useTheme();
 	const navigation = useNavigation();
@@ -71,6 +72,7 @@ export function SchedulingDetails() {
 	));
 
 	async function handleConfirmRental() {
+		setLoading(true);
 		try {
 			const schedulesByCar = await api.get(`/schedules_bycars/${car.id}`);
 
@@ -79,15 +81,27 @@ export function SchedulingDetails() {
 				...dates,
 			];
 
+			api.post(`/schedules_byuser`, {
+				user_id: 1,
+				car,
+				startDate: rentalPeriod.start,
+				endDate: rentalPeriod.end,
+			});
+
 			api
 				.put(`/schedules_bycars/${car.id}`, {
 					id: car.id,
 					unavailable_dates,
 				})
 				.then(() => navigation.navigate('SchedulingComplete'))
-				.catch(() => Alert.alert('Não foi possível confirmar o agendamento'));
+				.catch(() => {
+					setLoading(false);
+					Alert.alert('Não foi possível confirmar o agendamento');
+				});
 		} catch (error) {
 			console.log(error);
+		} finally {
+			setLoading(false);
 		}
 	}
 
@@ -170,6 +184,8 @@ export function SchedulingDetails() {
 					title="Agendar agora"
 					color={theme.colors.success}
 					onPress={handleConfirmRental}
+					isLoading={loading}
+					disabled={loading}
 				/>
 			</Footer>
 		</Container>
