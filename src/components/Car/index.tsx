@@ -21,12 +21,12 @@ interface CarProps extends PressableProps {
 	data: CarDTO;
 }
 
-export function Car({ data, ...rest }: CarProps) {
+export function Car({ data, disabled, ...rest }: CarProps) {
 	const MotorIcon = getAccessoryIcon(data.fuel_type);
 
 	return (
 		<Pressable {...rest}>
-			<Container>
+			<Container enabled={!disabled}>
 				<Details>
 					<Brand>{data.brand}</Brand>
 					<Name>{data.name}</Name>
