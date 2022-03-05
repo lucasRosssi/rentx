@@ -2,6 +2,7 @@ import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import { Splash } from '../screens/Splash';
 import { Home } from '../screens/Home';
 import { CarDetails } from '../screens/CarDetails';
 import { Scheduling } from '../screens/Scheduling';
@@ -12,6 +13,7 @@ import { MyCars } from '../screens/MyCars';
 import { CarDTO } from '../dtos/CarDTO';
 
 export type RootStackParamList = {
+	Splash: undefined;
 	Home: undefined;
 	CarDetails: { car: CarDTO };
 	Scheduling: { car: CarDTO };
@@ -24,7 +26,14 @@ const { Navigator, Screen } = createNativeStackNavigator<RootStackParamList>();
 
 export function StackRoutes() {
 	return (
-		<Navigator>
+		<Navigator initialRouteName="Splash">
+			<Screen
+				name="Splash"
+				component={Splash}
+				options={{
+					headerShown: false,
+				}}
+			/>
 			<Screen
 				name="Home"
 				component={Home}
