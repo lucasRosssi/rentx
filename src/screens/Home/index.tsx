@@ -52,11 +52,7 @@ export function Home() {
 				translucent
 			/>
 			<Header>
-				<Logo
-					width={RFValue(108)}
-					height={RFValue(12)}
-					style={{ marginBottom: RFValue(4) }}
-				/>
+				<Logo width={108} height={12} style={{ marginBottom: RFValue(4) }} />
 
 				<TotalCars>{loading ? '' : `Total de ${cars.length} carros`}</TotalCars>
 			</Header>
