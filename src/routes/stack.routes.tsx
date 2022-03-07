@@ -39,6 +39,7 @@ export function StackRoutes() {
 				component={Home}
 				options={{
 					headerShown: false,
+					animation: 'none',
 				}}
 			/>
 			<Screen
