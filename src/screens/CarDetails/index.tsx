@@ -1,5 +1,14 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+
+import Animated, {
+	useSharedValue,
+	useAnimatedScrollHandler,
+	useAnimatedStyle,
+	interpolate,
+	Extrapolate,
+} from 'react-native-reanimated';
 
 import { getAccessoryIcon } from '../../utils/getAccessoryIcon';
 import { CarDTO } from '../../dtos/CarDTO';
@@ -35,6 +44,28 @@ export function CarDetails() {
 	const route = useRoute();
 	const { car } = route.params as Params;
 
+	const scrollY = useSharedValue(0);
+	const scrollHandler = useAnimatedScrollHandler((event) => {
+		scrollY.value = event.contentOffset.y;
+	});
+
+	const headerStyleAnimation = useAnimatedStyle(() => {
+		return {
+			height: interpolate(
+				scrollY.value,
+				[0, 200],
+				[200, 90],
+				Extrapolate.CLAMP
+			),
+		};
+	});
+
+	const sliderCarsStyleAnimation = useAnimatedStyle(() => {
+		return {
+			opacity: interpolate(scrollY.value, [0, 130], [1, 0], Extrapolate.CLAMP),
+		};
+	});
+
 	const carAccessories = car.accessories.map((accessory) => (
 		<Accessory
 			key={accessory.type}
@@ -49,15 +80,23 @@ export function CarDetails() {
 
 	return (
 		<Container>
-			<Header>
-				<BackButton />
-			</Header>
+			<StatusBar
+				translucent
+				backgroundColor="transparent"
+				barStyle="dark-content"
+			/>
 
-			<CarImages>
-				<ImageSlider imageUrl={car.photos} />
-			</CarImages>
+			<Animated.View style={[headerStyleAnimation, { overflow: 'hidden' }]}>
+				<Header>
+					<BackButton />
+				</Header>
 
-			<Content>
+				<CarImages style={sliderCarsStyleAnimation}>
+					<ImageSlider imageUrl={car.photos} />
+				</CarImages>
+			</Animated.View>
+
+			<Content onScroll={scrollHandler}>
 				<Details>
 					<Description>
 						<Brand>{car.brand}</Brand>
