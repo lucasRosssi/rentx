@@ -87,6 +87,7 @@ export function MyCars() {
 						data={cars}
 						keyExtractor={(item) => item.id}
 						showsVerticalScrollIndicator={false}
+						inverted
 						renderItem={({ item }) => (
 							<CarWrapper>
 								<Car data={item.car} disabled />
