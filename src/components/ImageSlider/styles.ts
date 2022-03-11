@@ -31,13 +31,10 @@ export const ImageIndex = styled.View<ImageIndexProps>`
 
 export const CarImageWrapper = styled.View`
 	width: ${screenWidth}px;
-	height: ${RFValue(132)}px;
-
 	align-items: center;
 	justify-content: center;
 `;
 
 export const CarImage = styled.Image`
-	width: ${RFValue(280)}px;
-	height: ${RFValue(132)}px;
+	width: ${RFValue(240)}px;
 `;

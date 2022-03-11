@@ -48,6 +48,7 @@ export function Car({ data, disabled, ...rest }: CarProps) {
 						uri: data.thumbnail,
 					}}
 					resizeMode="contain"
+					style={{ height: 150 }}
 				/>
 			</Container>
 		</Pressable>
