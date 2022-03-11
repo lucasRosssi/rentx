@@ -29,7 +29,7 @@
           "name": "Elétrico"
         },
         {
-          "type": "exchange",
+          "type": "gear",
           "name": "Auto"
         },
         {
@@ -41,6 +41,345 @@
         "https://storage.googleapis.com/golden-wind/ignite/react-native/images/1.png",
         "https://storage.googleapis.com/golden-wind/ignite/react-native/images/2.png",
         "https://storage.googleapis.com/golden-wind/ignite/react-native/images/3.png"
+      ]
+    },
+    {
+      "id": "custom01",
+      "brand": "BMW",
+      "name": "Z4 2022",
+      "about": "O motor da versão sDrive30i é o 2.0 turbo de 258 cv e 40,8 kgfm, e o da nova M40i é o conhecido 3.0 de 6 cilindros em linha, turbo, de 340 cv e 51 kgfm. Ambos são acoplados à transmissão Steptronic, automática de 8 velocidades. O conversível mede 4324 mm de comprimento, 1864 mm de largura, 1304 mm de altura e 2470 mm de entre-eixos e possui porta-malas para até 281 litros de bagagem. A sDrive30i pesa 1415 kg e sua velocidade máxima é 250 km/h, limitados eletronicamente, e faz 0-100 km/h em 5,4 segundos. Já a M40i pesa 1535 kg, sua velocidade máxima também é 250 km/h limitados eletronicamente, mas seu 0-100 km/h é 4,5 segundos",
+      "rent": {
+        "period": "Ao dia",
+        "price": 100
+      },
+      "fuel_type": "gasoline_motor",
+      "thumbnail": "https://www.webmotors.com.br/imagens/prod/348003/BMW_Z4_2.0_TWINPOWER_GASOLINA_SDRIVE30I_M_SPORT_STEPTRONIC_34800313491913680.png?s=fill&w=440&h=330&q=80&t=true",
+      "accessories": [
+        {
+          "type": "speed",
+          "name": "250km/h"
+        },
+        {
+          "type": "acceleration",
+          "name": "5.4s"
+        },
+        {
+          "type": "turning_diameter",
+          "name": "382 HP"
+        },
+        {
+          "type": "gasoline_motor",
+          "name": "Gasolina"
+        },
+        {
+          "type": "gear",
+          "name": "Auto"
+        },
+        {
+          "type": "seats",
+          "name": "2 pessoas"
+        }
+      ],
+      "photos": [
+        "https://www.webmotors.com.br/imagens/prod/348003/BMW_Z4_2.0_TWINPOWER_GASOLINA_SDRIVE30I_M_SPORT_STEPTRONIC_34800313491913680.png?s=fill&w=440&h=330&q=80&t=true",
+        "https://www.webmotors.com.br/imagens/prod/348003/BMW_Z4_2.0_TWINPOWER_GASOLINA_SDRIVE30I_M_SPORT_STEPTRONIC_34800313491825967.png?s=fill&w=440&h=330&q=80&t=true",
+        "https://www.webmotors.com.br/imagens/prod/348003/BMW_Z4_2.0_TWINPOWER_GASOLINA_SDRIVE30I_M_SPORT_STEPTRONIC_34800313492085542.png?s=fill&w=440&h=330&q=80&t=true"
+      ]
+    },
+    {
+      "id": "custom02",
+      "brand": "Ford",
+      "name": "Ranger 2.2 Black",
+      "about": "Força e sofisticação. A Ranger Black é uma versão urbana exclusiva, assim como seu estilo escurecido em todos os detalhes, trazendo atitude e imponência em uma picape de verdade. Controle sua picape através do seu celular. Com o FordPass™ Connect você pode interagir com sua picape através da internet, de onde você estiver. É possível dar a partida no veículo acionando o ar condicionado, receber alertas, verificar dados do veículo como nível do combustível e muito mais. Tecnologia de segurança que mantém o veículo sob controle mesmo em manobras bruscas, reduzindo o risco de acidentes.",
+      "rent": {
+        "period": "Ao dia",
+        "price": 230
+      },
+      "fuel_type": "gasoline_motor",
+      "thumbnail": "https://www.webmotors.com.br/imagens/prod/348644/FORD_RANGER_2.2_BLACK_4X2_CD_16V_DIESEL_4P_AUTOMATICO_34864417105564936.png?s=fill&w=440&h=330&q=80&t=true",
+      "accessories": [
+        {
+          "type": "speed",
+          "name": "164km/h"
+        },
+        {
+          "type": "acceleration",
+          "name": "15s"
+        },
+        {
+          "type": "turning_diameter",
+          "name": "270 HP"
+        },
+        {
+          "type": "gasoline_motor",
+          "name": "Diesel"
+        },
+        {
+          "type": "gear",
+          "name": "Auto"
+        },
+        {
+          "type": "seats",
+          "name": "5 pessoas"
+        }
+      ],
+      "photos": [
+        "https://www.webmotors.com.br/imagens/prod/348644/FORD_RANGER_2.2_BLACK_4X2_CD_16V_DIESEL_4P_AUTOMATICO_34864417105564936.png?s=fill&w=440&h=330&q=80&t=true",
+        "https://www.webmotors.com.br/imagens/prod/348644/FORD_RANGER_2.2_BLACK_4X2_CD_16V_DIESEL_4P_AUTOMATICO_34864417105882134.png?s=fill&w=440&h=330&q=80&t=true"
+      ]
+    },
+    {
+      "id": "custom03",
+      "brand": "Lamborghini",
+      "name": "Urus 2022",
+      "about": "Os principais itens de série do Urus 2022 são 8 airbags, câmera de ré, controles de tração e estabilidade, assistente de partida em rampa, faróis de LED, controle de descida, indicador de fadiga, alertas de ponto cego, mudança de faixa e colisão frontal, frenagem automática de emergência, assistente de permanência na faixa, visão noturna, vetorização de torque, diferencial central, ar condicionado de 4 zonas, assistente de estacionamento semiautomático, piloto automático adaptativo, assistente de estacionamento, banco do motorista com memória, recuperação de energia cinética, suspensão pneumática ajustável, controle de largada, desativação de cilindros, tampa do porta-malas motorizada, rodas de 21” com pneus 285/45 na dianteira e 315/40 na traseira e sistema multimídia com TV digital, DVD player, Bluetooth e espelhamento da tela do celular.",
+      "rent": {
+        "period": "Ao dia",
+        "price": 295
+      },
+      "fuel_type": "gasoline_motor",
+      "thumbnail": "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_34796017052296620.png?s=fill&w=440&h=330&q=80&t=true",
+      "accessories": [
+        {
+          "type": "speed",
+          "name": "305km/h"
+        },
+        {
+          "type": "acceleration",
+          "name": "3.6s"
+        },
+        {
+          "type": "turning_diameter",
+          "name": "641 HP"
+        },
+        {
+          "type": "gasoline_motor",
+          "name": "Gasolina"
+        },
+        {
+          "type": "gear",
+          "name": "Auto"
+        },
+        {
+          "type": "seats",
+          "name": "5 pessoas"
+        }
+      ],
+      "photos": [
+        "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_34796017052296620.png?s=fill&w=440&h=330&q=80&t=true",
+        "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_3479601705253285.png?s=fill&w=440&h=330&q=80&t=true",
+        "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_34796017052467243.png?s=fill&w=440&h=330&q=80&t=true",
+        "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_34796017052395553.png?s=fill&w=440&h=330&q=80&t=true",
+        "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_34796017052361384.png?s=fill&w=440&h=330&q=80&t=true"
+      ]
+    },
+    {
+      "id": "custom04",
+      "brand": "McLaren",
+      "name": "720S 2022",
+      "about": "O 720S 2022 sai de fábrica com airbags frontais e laterais, alarme, controles de tração e estabilidade, faróis com acendimento automático em LED com luzes de condução diurna, monitoramento de pressão dos pneus, vetorização de torque, ar condicionado automático, volante com ajustes de altura e profundidade, banco do motorista com ajustes elétricos, aletas para troca de marcha no volante, chave presencial, sistema start-stop, retrovisores com rebatimento elétrico e aquecimento, sistema de infotenimento com rádio, USB, Bluetooth, GPS e computador de bordo, recuperação de energia cinética, amortecedores eletrônicos, controle de largada, sistema de limpeza de disco de freio, controle de chassi ativo, controle variável de drift e 3 modos de condução: Comfort, Sport e Track.",
+      "rent": {
+        "period": "Ao dia",
+        "price": 320
+      },
+      "fuel_type": "gasoline_motor",
+      "thumbnail": "https://www.webmotors.com.br/imagens/prod/347708/MCLAREN_720S_4.0_V8_TURBO_GASOLINA_SSG_34770816102770829.png?s=fill&w=440&h=330&q=80&t=true",
+      "accessories": [
+        {
+          "type": "speed",
+          "name": "341km/h"
+        },
+        {
+          "type": "acceleration",
+          "name": "2.9s"
+        },
+        {
+          "type": "turning_diameter",
+          "name": "720 HP"
+        },
+        {
+          "type": "gasoline_motor",
+          "name": "Gasolina"
+        },
+        {
+          "type": "gear",
+          "name": "Auto"
+        },
+        {
+          "type": "seats",
+          "name": "2 pessoas"
+        }
+      ],
+      "photos": [
+        "https://www.webmotors.com.br/imagens/prod/347708/MCLAREN_720S_4.0_V8_TURBO_GASOLINA_SSG_34770816102770829.png?s=fill&w=440&h=330&q=80&t=true",
+        "https://www.webmotors.com.br/imagens/prod/347708/MCLAREN_720S_4.0_V8_TURBO_GASOLINA_SSG_34770816103052990.png?s=fill&w=440&h=330&q=80&t=true",
+        "https://www.webmotors.com.br/imagens/prod/347708/MCLAREN_720S_4.0_V8_TURBO_GASOLINA_SSG_34770816103044212.png?s=fill&w=440&h=330&q=80&t=true"
+      ]
+    },
+    {
+      "id": "custom05",
+      "brand": "Jeep",
+      "name": "Wrangler",
+      "about": "A bordo do Jeep Wrangler você encontra conforto e tecnologia como nunca vistos antes. A economia de combustível também é maior, já que o novo Wrangler ganhou uma estrutura atualizada composta por alumínio, reduzindo seu peso em aproximadamente 90Kg. Além disso, devido ao capô e portas feitos nesse mesmo material, a performance e segurança do modelo melhoraram significativamente. A aventura é a essência do Jeep Wrangler, por isso suas portas e capota são removíveis. Com isso, você consegue configurar o seu carro como quiser, de forma fácil e rápida, e ter mais liberdade em suas aventuras.",
+      "rent": {
+        "period": "Ao dia",
+        "price": 140
+      },
+      "fuel_type": "gasoline_motor",
+      "thumbnail": "https://www.webmotors.com.br/imagens/prod/348141/JEEP_WRANGLER_2.0_TURBO_GASOLINA_RUBICON_4P_4X4_AT8_34814111373457729.png?s=fill&w=440&h=330&q=80&t=true",
+      "accessories": [
+        {
+          "type": "speed",
+          "name": "197km/h"
+        },
+        {
+          "type": "acceleration",
+          "name": "7.5s"
+        },
+        {
+          "type": "turning_diameter",
+          "name": "272 HP"
+        },
+        {
+          "type": "gasoline_motor",
+          "name": "Gasolina"
+        },
+        {
+          "type": "gear",
+          "name": "Auto"
+        },
+        {
+          "type": "seats",
+          "name": "5 pessoas"
+        }
+      ],
+      "photos": [
+        "https://www.webmotors.com.br/imagens/prod/348141/JEEP_WRANGLER_2.0_TURBO_GASOLINA_RUBICON_4P_4X4_AT8_34814111373457729.png?s=fill&w=440&h=330&q=80&t=true"
+      ]
+    },
+    {
+      "id": "custom06",
+      "brand": "Troller",
+      "name": "T4",
+      "about": "O T4 vem equipado com motor 3.2 Turbo Diesel que gera 200 cv e 47,9 kgfm acoplado a uma transmissão manual de 6 velocidades. A tração é 4X4 com reduzida e três modos de operação. O SUV tem 4095 mm de comprimento, largura de 1868 mm, altura de 1966 mm e entre-eixos de 2585 mm. O seu vão livre do solo é de 208 mm e o porta malas possui capacidade de 134 litros. Vem de série com rodas de liga leve aro 17”, freios ABS com EBD, airbag dianteiro duplo, ar condicionado, travas e vidros elétricos, rádio FM com MP3, USB, CD Player, computador de bordo, desembaçador traseiro, faróis de neblina e bancos com revestimento em couro.",
+      "rent": {
+        "period": "Ao dia",
+        "price": 130
+      },
+      "fuel_type": "gasoline_motor",
+      "thumbnail": "https://www.webmotors.com.br/imagens/prod/348321/TROLLER_T4_3.2_TGV_4X4_20V_TURBO_INTERCOOLER_DIESEL_2P_AUTOMATICO_34832108345652255.png?s=fill&w=440&h=330&q=80&t=true",
+      "accessories": [
+        {
+          "type": "speed",
+          "name": "180km/h"
+        },
+        {
+          "type": "acceleration",
+          "name": "12.3s"
+        },
+        {
+          "type": "turning_diameter",
+          "name": "200 HP"
+        },
+        {
+          "type": "gasoline_motor",
+          "name": "Gasolina"
+        },
+        {
+          "type": "gear",
+          "name": "Manual"
+        },
+        {
+          "type": "seats",
+          "name": "5 pessoas"
+        }
+      ],
+      "photos": [
+        "https://www.webmotors.com.br/imagens/prod/348321/TROLLER_T4_3.2_TGV_4X4_20V_TURBO_INTERCOOLER_DIESEL_2P_AUTOMATICO_34832108345652255.png?s=fill&w=440&h=330&q=80&t=true",
+        "https://www.webmotors.com.br/imagens/prod/348321/TROLLER_T4_3.2_TGV_4X4_20V_TURBO_INTERCOOLER_DIESEL_2P_AUTOMATICO_34832108345700951.png?s=fill&w=440&h=330&q=80&t=true"
+      ]
+    },
+    {
+      "id": "custom07",
+      "brand": "Kawasaki",
+      "name": "Z400 ABS",
+      "about": "Criada para ser uma verdadeira supernaked, a Kawasaki Z400 traz elementos compartilhados com a Ninja 400 e que reforçam aspectos característicos dos modelos de maior cilindrada da Linha Z, como leveza, agilidade e, claro, esportividade. Um supernaked ferozmente autêntico, o Kawasaki Z400 ABS exala um novo estilo de rua e é imediatamente reconhecível na multidão com seu chassi compacto e estilo agressivo. Confortável, equilibrado e capaz, o Z400 ABS oferece uma experiência de pilotagem visceral que certamente chamará a atenção.",
+      "rent": {
+        "period": "Ao dia",
+        "price": 70
+      },
+      "fuel_type": "gasoline_motor",
+      "thumbnail": "https://kawasaki.m3parts.com.br/arquivos/215_2922fd740990a6114478bf1be46b9e3e88303001.jpg",
+      "accessories": [
+        {
+          "type": "speed",
+          "name": "180km/h"
+        },
+        {
+          "type": "acceleration",
+          "name": "14.2s"
+        },
+        {
+          "type": "turning_diameter",
+          "name": "48 HP"
+        },
+        {
+          "type": "gasoline_motor",
+          "name": "Gasolina"
+        },
+        {
+          "type": "gear",
+          "name": "Manual"
+        },
+        {
+          "type": "seats",
+          "name": "2 pessoas"
+        }
+      ],
+      "photos": [
+        "https://kawasaki.m3parts.com.br/arquivos/215_2922fd740990a6114478bf1be46b9e3e88303001.jpg"
+      ]
+    },
+    {
+      "id": "custom08",
+      "brand": "BMW",
+      "name": "R 1250 GS",
+      "about": "A nova BMW R 1250 GS chega com diversas novidades, como o motor boxer de última geração, aumento de cilindrada para 1.254 cc e a presença do sistema ShiftCam, que melhora a entrega do motor em todas as faixas de rotação. Potência e torque também aumentaram. A R 1250 GS agora tem 136 cv de potência máxima a 7.750 rpm, além de um torque de 14,5 kgf.m a 6.250 rpm. A versatilidade e o ótimo desempenho em todos os tipos de terrenos permanecem presentes. A mais nova geração do motor boxer fascina por proporcionar tamanho prazer de condução graças ao aumento das cilindradas e a um cabeçote do motor completamente redesenhado. O conjunto propulsor exclusivo ganha pontos com um desempenho visivelmente maior nos quesitos de potência e torque ao longo de toda a faixa de rotações, enquanto, ao mesmo tempo, oferece uma suavidade de funcionamento melhorada através do controle variável das válvulas, chamado de tecnologia BMW ShiftCam. ",
+      "rent": {
+        "period": "Ao dia",
+        "price": 100
+      },
+      "fuel_type": "gasoline_motor",
+      "thumbnail": "https://www.motonline.com.br/storage/guides/bmw/r-1250-gs.jpg",
+      "accessories": [
+        {
+          "type": "speed",
+          "name": "220km/h"
+        },
+        {
+          "type": "acceleration",
+          "name": "3.6s"
+        },
+        {
+          "type": "turning_diameter",
+          "name": "136 HP"
+        },
+        {
+          "type": "gasoline_motor",
+          "name": "Gasolina"
+        },
+        {
+          "type": "gear",
+          "name": "Manual"
+        },
+        {
+          "type": "seats",
+          "name": "2 pessoas"
+        }
+      ],
+      "photos": [
+        "https://www.motonline.com.br/storage/guides/bmw/r-1250-gs.jpg",
+        "https://cdn.autopapo.com.br/box/uploads/2019/09/02195833/p90322005_highres_bmw-r-1250-gs-hp-bil.jpg"
       ]
     },
     {
@@ -72,7 +411,7 @@
           "name": "Gasoline"
         },
         {
-          "type": "exchange",
+          "type": "gear",
           "name": "Auto"
         },
         {
@@ -114,7 +453,7 @@
           "name": "Gasoline"
         },
         {
-          "type": "exchange",
+          "type": "gear",
           "name": "Auto"
         },
         {
@@ -157,7 +496,7 @@
           "name": "Elétrico"
         },
         {
-          "type": "exchange",
+          "type": "gear",
           "name": "Auto"
         },
         {
@@ -200,7 +539,7 @@
           "name": "Gasolina"
         },
         {
-          "type": "exchange",
+          "type": "gear",
           "name": "Auto"
         },
         {
@@ -243,7 +582,7 @@
           "name": "Híbrido"
         },
         {
-          "type": "exchange",
+          "type": "gear",
           "name": "Auto"
         },
         {
@@ -261,84 +600,64 @@
   "schedules_bycars": [
     {
       "id": "535e8de8-721b-4bac-8b72-7d29be7da467",
-      "unavailable_dates": [
-        "2021-06-01",
-        "2021-06-02",
-        "2021-06-09",
-        "2021-05-25",
-        "2021-07-16",
-        "2021-07-17",
-        "2021-07-18",
-        "2021-05-28",
-        "2021-05-29",
-        "2021-05-30",
-        "2021-05-28",
-        "2021-05-29",
-        "2021-05-30",
-        "2021-05-28",
-        "2021-05-29",
-        "2021-05-30",
-        "2021-06-16",
-        "2021-06-17",
-        "2021-06-18",
-        "2022-03-04",
-        "2022-03-05",
-        "2022-03-06",
-        "2022-03-07",
-        "2022-03-08"
-      ]
+      "unavailable_dates": []
     },
     {
       "id": "ffb71f55-818a-48b1-b7d2-2efc406ede25",
+      "unavailable_dates": []
+    },
+    {
+      "id": "52930821-cbea-4b05-9f45-7c02b1bb0d8c",
+      "unavailable_dates": []
+    },
+    {
+      "id": "49983f6c-a46a-4dfd-a86e-425b8c72e086",
+      "unavailable_dates": []
+    },
+    {
+      "id": "508e7193-0078-4615-9071-920b59038fda",
+      "unavailable_dates": []
+    },
+    {
+      "id": "59626707-88c5-4877-9350-07f372c0905a",
+      "unavailable_dates": []
+    },
+    {
+      "id": "custom01",
+      "unavailable_dates": []
+    },
+    {
+      "id": "custom02",
       "unavailable_dates": [
-        "2021-06-15",
-        "2021-06-16",
-        "2021-06-17",
-        "2021-06-01",
-        "2021-06-02",
-        "2021-06-03",
-        "2021-06-04",
-        "2021-05-29",
-        "2021-05-30",
-        "2021-05-29",
-        "2021-05-30",
-        "2022-03-08",
-        "2022-03-09",
-        "2022-03-10",
-        "2022-03-11",
         "2022-03-12",
         "2022-03-13",
         "2022-03-14",
+        "2022-03-15",
+        "2022-03-16",
+        "2022-03-17",
+        "2022-03-18",
+        "2022-03-19"
+      ]
+    },
+    {
+      "id": "custom03",
+      "unavailable_dates": [
         "2022-03-15",
         "2022-03-16",
         "2022-03-17"
       ]
     },
     {
-      "id": "52930821-cbea-4b05-9f45-7c02b1bb0d8c",
-      "unavailable_dates": [
-        "2021-08-01",
-        "2021-08-21",
-        "2021-08-22",
-        "2021-06-19",
-        "2021-06-20",
-        "2021-07-15",
-        "2021-07-16",
-        "2021-07-17",
-        "2021-07-18",
-        "2021-05-28",
-        "2021-05-29",
-        "2021-05-30",
-        "2022-03-05",
-        "2022-03-06"
-      ]
+      "id": "custom04",
+      "unavailable_dates": []
     },
     {
-      "id": "49983f6c-a46a-4dfd-a86e-425b8c72e086",
+      "id": "custom05",
+      "unavailable_dates": []
+    },
+    {
+      "id": "custom06",
       "unavailable_dates": [
-        "2021-06-19",
-        "2021-06-20",
-        "2021-06-21",
         "2022-03-11",
         "2022-03-12",
         "2022-03-13",
@@ -346,177 +665,213 @@
       ]
     },
     {
-      "id": "508e7193-0078-4615-9071-920b59038fda",
+      "id": "custom07",
       "unavailable_dates": [
-        "2021-06-01",
-        "2021-06-02",
-        "2021-06-03",
-        "2021-06-10",
-        "2021-06-11",
-        "2021-06-12",
-        "2021-06-17",
-        "2021-06-18",
-        "2021-06-19"
+        "2022-03-19",
+        "2022-03-20",
+        "2022-03-21",
+        "2022-03-22"
       ]
     },
     {
-      "id": "59626707-88c5-4877-9350-07f372c0905a",
-      "unavailable_dates": [
-        "2021-06-28",
-        "2021-06-29",
-        "2022-03-05",
-        "2022-03-06",
-        "2022-03-07",
-        "2022-03-08"
-      ]
+      "id": "custom08",
+      "unavailable_dates": []
     }
   ],
   "schedules_byuser": [
     {
       "user_id": 1,
       "car": {
-        "id": "52930821-cbea-4b05-9f45-7c02b1bb0d8c",
-        "brand": "Chevrolet",
-        "name": "Corvette Z06",
-        "about": "O Chevrolet Corvette Z06 inclui freios Brembo de alto desempenho com pinças maiores no conjunto dianteiro, itens aerodinâmicos com capô de fibra de carbono, suspensão para alto desempenho.",
+        "id": "custom06",
+        "brand": "Troller",
+        "name": "T4",
+        "about": "O T4 vem equipado com motor 3.2 Turbo Diesel que gera 200 cv e 47,9 kgfm acoplado a uma transmissão manual de 6 velocidades. A tração é 4X4 com reduzida e três modos de operação. O SUV tem 4095 mm de comprimento, largura de 1868 mm, altura de 1966 mm e entre-eixos de 2585 mm. O seu vão livre do solo é de 208 mm e o porta malas possui capacidade de 134 litros. Vem de série com rodas de liga leve aro 17”, freios ABS com EBD, airbag dianteiro duplo, ar condicionado, travas e vidros elétricos, rádio FM com MP3, USB, CD Player, computador de bordo, desembaçador traseiro, faróis de neblina e bancos com revestimento em couro.",
         "rent": {
           "period": "Ao dia",
-          "price": 620
+          "price": 130
         },
         "fuel_type": "gasoline_motor",
-        "thumbnail": "https://storage.googleapis.com/golden-wind/ignite/react-native/thumbnails/3.png",
+        "thumbnail": "https://www.webmotors.com.br/imagens/prod/348321/TROLLER_T4_3.2_TGV_4X4_20V_TURBO_INTERCOOLER_DIESEL_2P_AUTOMATICO_34832108345652255.png?s=fill&w=440&h=330&q=80&t=true",
         "accessories": [
           {
             "type": "speed",
-            "name": "330km/h"
+            "name": "180km/h"
           },
           {
             "type": "acceleration",
-            "name": "6.2s"
+            "name": "12.3s"
           },
           {
             "type": "turning_diameter",
-            "name": "900 HP"
+            "name": "200 HP"
           },
           {
             "type": "gasoline_motor",
-            "name": "Gasoline"
+            "name": "Gasolina"
           },
           {
-            "type": "exchange",
-            "name": "Auto"
-          },
-          {
-            "type": "seats",
-            "name": "2 pessoas"
-          }
-        ],
-        "photos": [
-          "https://storage.googleapis.com/golden-wind/ignite/react-native/images/6.png",
-          "https://storage.googleapis.com/golden-wind/ignite/react-native/images/7.png",
-          "https://storage.googleapis.com/golden-wind/ignite/react-native/images/8.png"
-        ]
-      },
-      "startDate": "05/03/2022",
-      "endDate": "06/03/2022",
-      "id": 1
-    },
-    {
-      "user_id": 1,
-      "car": {
-        "id": "49983f6c-a46a-4dfd-a86e-425b8c72e086",
-        "brand": "Lamborghini",
-        "name": "Huracan",
-        "about": "Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.",
-        "rent": {
-          "period": "Ao dia",
-          "price": 120
-        },
-        "fuel_type": "electric_motor",
-        "thumbnail": "https://storage.googleapis.com/golden-wind/ignite/react-native/thumbnails/4.png",
-        "accessories": [
-          {
-            "type": "speed",
-            "name": "380km/h"
-          },
-          {
-            "type": "acceleration",
-            "name": "3.2s"
-          },
-          {
-            "type": "turning_diameter",
-            "name": "800 HP"
-          },
-          {
-            "type": "electric_motor",
-            "name": "Elétrico"
-          },
-          {
-            "type": "exchange",
-            "name": "Auto"
+            "type": "gear",
+            "name": "Manual"
           },
           {
             "type": "seats",
-            "name": "2 pessoas"
+            "name": "5 pessoas"
           }
         ],
         "photos": [
-          "https://storage.googleapis.com/golden-wind/ignite/react-native/images/9.png",
-          "https://storage.googleapis.com/golden-wind/ignite/react-native/images/10.png",
-          "https://storage.googleapis.com/golden-wind/ignite/react-native/images/11.png"
+          "https://www.webmotors.com.br/imagens/prod/348321/TROLLER_T4_3.2_TGV_4X4_20V_TURBO_INTERCOOLER_DIESEL_2P_AUTOMATICO_34832108345652255.png?s=fill&w=440&h=330&q=80&t=true",
+          "https://www.webmotors.com.br/imagens/prod/348321/TROLLER_T4_3.2_TGV_4X4_20V_TURBO_INTERCOOLER_DIESEL_2P_AUTOMATICO_34832108345700951.png?s=fill&w=440&h=330&q=80&t=true"
         ]
       },
       "startDate": "11/03/2022",
       "endDate": "14/03/2022",
-      "id": 2
+      "id": 6
     },
     {
       "user_id": 1,
       "car": {
-        "id": "ffb71f55-818a-48b1-b7d2-2efc406ede25",
-        "brand": "Porsche",
-        "name": "Panamera",
-        "about": "O Panamera é um automóvel de luxo coupé com porte grande. Tem motorização dianteira V6 e V8. A tração é integral com uma caixa PDK de sete mudanças e dupla embreagem.",
+        "id": "custom03",
+        "brand": "Lamborghini",
+        "name": "Urus 2022",
+        "about": "Os principais itens de série do Urus 2022 são 8 airbags, câmera de ré, controles de tração e estabilidade, assistente de partida em rampa, faróis de LED, controle de descida, indicador de fadiga, alertas de ponto cego, mudança de faixa e colisão frontal, frenagem automática de emergência, assistente de permanência na faixa, visão noturna, vetorização de torque, diferencial central, ar condicionado de 4 zonas, assistente de estacionamento semiautomático, piloto automático adaptativo, assistente de estacionamento, banco do motorista com memória, recuperação de energia cinética, suspensão pneumática ajustável, controle de largada, desativação de cilindros, tampa do porta-malas motorizada, rodas de 21” com pneus 285/45 na dianteira e 315/40 na traseira e sistema multimídia com TV digital, DVD player, Bluetooth e espelhamento da tela do celular.",
         "rent": {
           "period": "Ao dia",
-          "price": 340
+          "price": 295
         },
         "fuel_type": "gasoline_motor",
-        "thumbnail": "https://storage.googleapis.com/golden-wind/ignite/react-native/thumbnails/2.png",
+        "thumbnail": "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_34796017052296620.png?s=fill&w=440&h=330&q=80&t=true",
         "accessories": [
           {
             "type": "speed",
-            "name": "315km/h"
+            "name": "305km/h"
           },
           {
             "type": "acceleration",
-            "name": "2.9s"
+            "name": "3.6s"
           },
           {
             "type": "turning_diameter",
-            "name": "700 HP"
+            "name": "641 HP"
           },
           {
             "type": "gasoline_motor",
-            "name": "Gasoline"
+            "name": "Gasolina"
           },
           {
-            "type": "exchange",
+            "type": "gear",
             "name": "Auto"
           },
           {
             "type": "seats",
-            "name": "4 pessoas"
+            "name": "5 pessoas"
           }
         ],
         "photos": [
-          "https://storage.googleapis.com/golden-wind/ignite/react-native/images/4.png",
-          "https://storage.googleapis.com/golden-wind/ignite/react-native/images/5.png"
+          "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_34796017052296620.png?s=fill&w=440&h=330&q=80&t=true",
+          "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_3479601705253285.png?s=fill&w=440&h=330&q=80&t=true",
+          "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_34796017052467243.png?s=fill&w=440&h=330&q=80&t=true",
+          "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_34796017052395553.png?s=fill&w=440&h=330&q=80&t=true",
+          "https://www.webmotors.com.br/imagens/prod/347960/LAMBORGHINI_URUS_4.0_V8_TURBO_GASOLINA_LP6504_AUTOMATICO_34796017052361384.png?s=fill&w=440&h=330&q=80&t=true"
         ]
       },
-      "startDate": "08/03/2022",
+      "startDate": "15/03/2022",
       "endDate": "17/03/2022",
-      "id": 3
+      "id": 7
+    },
+    {
+      "user_id": 1,
+      "car": {
+        "id": "custom07",
+        "brand": "Kawasaki",
+        "name": "Z400 ABS",
+        "about": "Criada para ser uma verdadeira supernaked, a Kawasaki Z400 traz elementos compartilhados com a Ninja 400 e que reforçam aspectos característicos dos modelos de maior cilindrada da Linha Z, como leveza, agilidade e, claro, esportividade. Um supernaked ferozmente autêntico, o Kawasaki Z400 ABS exala um novo estilo de rua e é imediatamente reconhecível na multidão com seu chassi compacto e estilo agressivo. Confortável, equilibrado e capaz, o Z400 ABS oferece uma experiência de pilotagem visceral que certamente chamará a atenção.",
+        "rent": {
+          "period": "Ao dia",
+          "price": 70
+        },
+        "fuel_type": "gasoline_motor",
+        "thumbnail": "https://kawasaki.m3parts.com.br/arquivos/215_2922fd740990a6114478bf1be46b9e3e88303001.jpg",
+        "accessories": [
+          {
+            "type": "speed",
+            "name": "180km/h"
+          },
+          {
+            "type": "acceleration",
+            "name": "14.2s"
+          },
+          {
+            "type": "turning_diameter",
+            "name": "48 HP"
+          },
+          {
+            "type": "gasoline_motor",
+            "name": "Gasolina"
+          },
+          {
+            "type": "gear",
+            "name": "Manual"
+          },
+          {
+            "type": "seats",
+            "name": "2 pessoas"
+          }
+        ],
+        "photos": [
+          "https://kawasaki.m3parts.com.br/arquivos/215_2922fd740990a6114478bf1be46b9e3e88303001.jpg"
+        ]
+      },
+      "startDate": "19/03/2022",
+      "endDate": "22/03/2022",
+      "id": 8
+    },
+    {
+      "user_id": 1,
+      "car": {
+        "id": "custom02",
+        "brand": "Ford",
+        "name": "Ranger 2.2 Black",
+        "about": "Força e sofisticação. A Ranger Black é uma versão urbana exclusiva, assim como seu estilo escurecido em todos os detalhes, trazendo atitude e imponência em uma picape de verdade. Controle sua picape através do seu celular. Com o FordPass™ Connect você pode interagir com sua picape através da internet, de onde você estiver. É possível dar a partida no veículo acionando o ar condicionado, receber alertas, verificar dados do veículo como nível do combustível e muito mais. Tecnologia de segurança que mantém o veículo sob controle mesmo em manobras bruscas, reduzindo o risco de acidentes.",
+        "rent": {
+          "period": "Ao dia",
+          "price": 230
+        },
+        "fuel_type": "gasoline_motor",
+        "thumbnail": "https://www.webmotors.com.br/imagens/prod/348644/FORD_RANGER_2.2_BLACK_4X2_CD_16V_DIESEL_4P_AUTOMATICO_34864417105564936.png?s=fill&w=440&h=330&q=80&t=true",
+        "accessories": [
+          {
+            "type": "speed",
+            "name": "164km/h"
+          },
+          {
+            "type": "acceleration",
+            "name": "15s"
+          },
+          {
+            "type": "turning_diameter",
+            "name": "270 HP"
+          },
+          {
+            "type": "gasoline_motor",
+            "name": "Diesel"
+          },
+          {
+            "type": "gear",
+            "name": "Auto"
+          },
+          {
+            "type": "seats",
+            "name": "5 pessoas"
+          }
+        ],
+        "photos": [
+          "https://www.webmotors.com.br/imagens/prod/348644/FORD_RANGER_2.2_BLACK_4X2_CD_16V_DIESEL_4P_AUTOMATICO_34864417105564936.png?s=fill&w=440&h=330&q=80&t=true",
+          "https://www.webmotors.com.br/imagens/prod/348644/FORD_RANGER_2.2_BLACK_4X2_CD_16V_DIESEL_4P_AUTOMATICO_34864417105882134.png?s=fill&w=440&h=330&q=80&t=true"
+        ]
+      },
+      "startDate": "12/03/2022",
+      "endDate": "19/03/2022",
+      "id": 9
     }
   ]
 }
