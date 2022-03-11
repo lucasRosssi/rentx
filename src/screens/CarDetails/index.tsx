@@ -54,7 +54,7 @@ export function CarDetails() {
 			height: interpolate(
 				scrollY.value,
 				[0, 200],
-				[200, 90],
+				[230, 90],
 				Extrapolate.CLAMP
 			),
 		};
