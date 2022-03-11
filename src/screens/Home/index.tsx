@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { StatusBar, useWindowDimensions } from 'react-native';
+import { BackHandler, StatusBar, useWindowDimensions } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { useNavigation } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { useTheme } from 'styled-components';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 import {
 	useSharedValue,
@@ -95,6 +94,15 @@ export function Home() {
 		fetchCars();
 	}, []);
 
+	useFocusEffect(() => {
+		const backHandler = BackHandler.addEventListener(
+			'hardwareBackPress',
+			() => true
+		);
+
+		return () => backHandler.remove();
+	});
+
 	return (
 		<Container>
 			<StatusBar
@@ -105,7 +113,9 @@ export function Home() {
 			<Header>
 				<Logo width={108} height={12} style={{ marginBottom: RFValue(4) }} />
 
-				<TotalCars>{loading ? '' : `Total de ${cars.length} carros`}</TotalCars>
+				<TotalCars>
+					{loading ? '' : `Total de ${cars.length} automóveis`}
+				</TotalCars>
 			</Header>
 
 			{loading ? (
