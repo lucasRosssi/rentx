@@ -1,7 +1,6 @@
 import React from 'react';
-import { Pressable, PressableProps } from 'react-native';
+import { ActivityIndicator, Pressable, PressableProps } from 'react-native';
 import { useTheme } from 'styled-components';
-import { LoadingIndicator } from '../LoadingIndicator';
 
 import { Container, Title } from './styles';
 
@@ -24,7 +23,7 @@ export function Button({
 		<Pressable {...rest}>
 			<Container color={color} enabled={!disabled}>
 				{isLoading ? (
-					<LoadingIndicator color={theme.colors.shape} />
+					<ActivityIndicator color={theme.colors.shape} />
 				) : (
 					<Title>{title}</Title>
 				)}
