@@ -40,6 +40,7 @@ export function StackRoutes() {
 				options={{
 					headerShown: false,
 					animation: 'none',
+					gestureEnabled: false,
 				}}
 			/>
 			<Screen
