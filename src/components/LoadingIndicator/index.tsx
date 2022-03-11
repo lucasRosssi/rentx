@@ -1,19 +1,20 @@
 import React from 'react';
-import { ActivityIndicator } from 'react-native';
-import { useTheme } from 'styled-components';
+import LottieView from 'lottie-react-native';
 
-interface LoadingIndicatorProps {
-	color?: string;
-}
+import loadingCar from '../../assets/loading_car.json';
 
-export function LoadingIndicator({ color }: LoadingIndicatorProps) {
-	const theme = useTheme();
+import { Container } from './styles';
 
+export function LoadingIndicator() {
 	return (
-		<ActivityIndicator
-			color={color ? color : theme.colors.main}
-			size="large"
-			style={{ flex: 1 }}
-		/>
+		<Container>
+			<LottieView
+				source={loadingCar}
+				autoPlay
+				style={{ height: 200 }}
+				resizeMode="contain"
+				loop
+			/>
+		</Container>
 	);
 }
