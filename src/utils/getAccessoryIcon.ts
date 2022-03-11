@@ -4,7 +4,7 @@ import ForceSvg from '../assets/force.svg';
 import GasolineSvg from '../assets/gasoline.svg';
 import EnergySvg from '../assets/energy.svg';
 import HybridSvg from '../assets/hybrid.svg';
-import ExchangeSvg from '../assets/exchange.svg';
+import GearSvg from '../assets/exchange.svg';
 import PeopleSvg from '../assets/people.svg';
 import CarSvg from '../assets/car.svg';
 
@@ -22,8 +22,8 @@ export function getAccessoryIcon(type: string) {
 			return EnergySvg;
 		case 'hybrid_motor':
 			return HybridSvg;
-		case 'exchange':
-			return ExchangeSvg;
+		case 'gear':
+			return GearSvg;
 		case 'seats':
 			return PeopleSvg;
 		default:
