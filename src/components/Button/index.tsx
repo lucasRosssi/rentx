@@ -7,12 +7,14 @@ import { Container, Title } from './styles';
 interface ButtonProps extends PressableProps {
 	title: string;
 	color?: string;
+	textColor?: string;
 	isLoading?: boolean;
 }
 
 export function Button({
 	title,
 	color,
+	textColor,
 	isLoading,
 	disabled,
 	...rest
@@ -25,7 +27,7 @@ export function Button({
 				{isLoading ? (
 					<ActivityIndicator color={theme.colors.shape} />
 				) : (
-					<Title>{title}</Title>
+					<Title textColor={textColor}>{title}</Title>
 				)}
 			</Container>
 		</Pressable>

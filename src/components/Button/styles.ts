@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 
 interface Props {
 	color?: string;
+	textColor?: string;
 }
 
 export const Container = styled(RectButton)<Props>`
@@ -18,8 +19,9 @@ export const Container = styled(RectButton)<Props>`
 		color ? color : theme.colors.main};
 `;
 
-export const Title = styled.Text`
+export const Title = styled.Text<Props>`
 	font-family: ${({ theme }) => theme.fonts.primary_500};
 	font-size: ${RFValue(15)}px;
-	color: ${({ theme }) => theme.colors.shape};
+	color: ${({ textColor, theme }) =>
+		textColor ? textColor : theme.colors.shape};
 `;
