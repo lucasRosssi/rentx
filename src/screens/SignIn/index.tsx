@@ -23,12 +23,15 @@ import {
 	Footer,
 	HideButton,
 } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 export function SignIn() {
 	const [isKeyboardShown, setIsKeyboardShown] = useState(false);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+
 	const theme = useTheme();
+	const navigation = useNavigation();
 
 	async function handleSignIn() {
 		try {
@@ -55,9 +58,23 @@ export function SignIn() {
 		}
 	}
 
+	function handleNewAccount() {
+		navigation.navigate('SignUpFirstStep');
+	}
+
 	useEffect(() => {
-		Keyboard.addListener('keyboardDidShow', () => setIsKeyboardShown(true));
-		Keyboard.addListener('keyboardDidHide', () => setIsKeyboardShown(false));
+		const showKeyboard = Keyboard.addListener('keyboardDidShow', () =>
+			setIsKeyboardShown(true)
+		);
+		const hideKeyboard = Keyboard.addListener('keyboardDidHide', () =>
+			setIsKeyboardShown(false)
+		);
+
+		return () => {
+			setIsKeyboardShown(false);
+			Keyboard.removeSubscription(showKeyboard);
+			Keyboard.removeSubscription(hideKeyboard);
+		};
 	}, []);
 
 	return (
@@ -125,12 +142,14 @@ export function SignIn() {
 								opacity: email === '' && password === '' ? 0.5 : 1,
 							}}
 							onPress={handleSignIn}
+							textColor={theme.colors.background_secondary}
 						/>
 						{!isKeyboardShown && (
 							<Button
 								title="Criar conta"
 								color={theme.colors.background_secondary}
 								textColor={theme.colors.title}
+								onPress={handleNewAccount}
 							/>
 						)}
 					</Footer>
