@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { BorderlessButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
 	padding: 0 24px;
@@ -37,3 +38,7 @@ export const Form = styled.View`
 `;
 
 export const Footer = styled.View``;
+
+export const HideButton = styled(BorderlessButton)`
+	width: ${RFValue(24)}px;
+`;

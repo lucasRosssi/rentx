@@ -1,21 +1,59 @@
 import React, { useEffect, useState } from 'react';
 import {
+	Alert,
 	Keyboard,
 	KeyboardAvoidingView,
 	StatusBar,
 	TouchableWithoutFeedback,
 } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 import { useTheme } from 'styled-components';
+import * as Yup from 'yup';
+
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
+import { Feather } from '@expo/vector-icons';
 
-import { Container, Header, Subtitle, Title, Form, Footer } from './styles';
+import {
+	Container,
+	Header,
+	Subtitle,
+	Title,
+	Form,
+	Footer,
+	HideButton,
+} from './styles';
 
 export function SignIn() {
 	const [isKeyboardShown, setIsKeyboardShown] = useState(false);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const theme = useTheme();
+
+	async function handleSignIn() {
+		try {
+			const schema = Yup.object().shape({
+				email: Yup.string()
+					.required('Digite um e-mail')
+					.email('Digite um e-mail válido'),
+				password: Yup.string().required('Digite a sua senha'),
+			});
+
+			await schema.validate({ email, password });
+			Alert.alert('Tudo certo!');
+
+			//Fazer login
+		} catch (error) {
+			if (error instanceof Yup.ValidationError) {
+				Alert.alert('Opa', error.message);
+			} else {
+				Alert.alert(
+					'Erro na autenticação',
+					'Ocorreu um erro ao fazer login, verifique as credenciais'
+				);
+			}
+		}
+	}
 
 	useEffect(() => {
 		Keyboard.addListener('keyboardDidShow', () => setIsKeyboardShown(true));
@@ -38,10 +76,19 @@ export function SignIn() {
 								quase lá.
 							</Title>
 						) : (
-							<Title>
-								{'\n'}
-								{'\n'}
-							</Title>
+							<>
+								<Title>
+									{'\n'}
+									{'\n'}
+								</Title>
+								<HideButton onPress={Keyboard.dismiss}>
+									<Feather
+										name="chevron-left"
+										color={theme.colors.text}
+										size={RFValue(24)}
+									/>
+								</HideButton>
+							</>
 						)}
 						<Subtitle>
 							Faça seu login para começar{'\n'}uma experiência incrível.
@@ -72,8 +119,12 @@ export function SignIn() {
 					<Footer>
 						<Button
 							title="Login"
-							disabled
-							style={{ marginBottom: 8, opacity: 0.5 }}
+							disabled={email === '' && password === ''}
+							style={{
+								marginBottom: 8,
+								opacity: email === '' && password === '' ? 0.5 : 1,
+							}}
+							onPress={handleSignIn}
 						/>
 						{!isKeyboardShown && (
 							<Button
