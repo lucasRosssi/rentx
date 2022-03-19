@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Alert, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { useTheme } from 'styled-components';
+import { api } from '../../../services/api';
 
 import { BackButton } from '../../../components/BackButton';
 import { BulletIndicator } from '../../../components/BulletIndicator';
@@ -8,7 +10,6 @@ import { Input } from '../../../components/Input';
 import { Button } from '../../../components/Button';
 
 import { Container, Header, Title, Subtitle, Form, FormTitle } from './styles';
-import { useTheme } from 'styled-components';
 
 interface Params {
 	user: {
@@ -29,7 +30,7 @@ export function SignUpSecondStep() {
 
 	const { user } = route.params as Params;
 
-	function handleRegister() {
+	async function handleRegister() {
 		if (!password) {
 			return Alert.alert('', 'Informe uma senha');
 		}
@@ -42,11 +43,23 @@ export function SignUpSecondStep() {
 			return Alert.alert('', 'As senhas não são iguais');
 		}
 
-		navigation.navigate('Confirmation', {
-			title: 'Conta criada',
-			message: 'Agora é só aproveitar',
-			nextNavigation: 'Home',
-		});
+		await api
+			.post('/users', {
+				name: user.name,
+				email: user.email,
+				driver_license: user.driver_license,
+				password,
+			})
+			.then(() => {
+				navigation.navigate('Confirmation', {
+					title: 'Conta criada',
+					message: 'Agora é só aproveitar',
+					nextNavigation: 'Home',
+				});
+			})
+			.catch(() => {
+				Alert.alert('Opa', 'Não foi possível cadastrar');
+			});
 	}
 
 	useEffect(() => {
