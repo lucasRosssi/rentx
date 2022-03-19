@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useTheme } from 'styled-components';
+import { useNavigation } from '@react-navigation/native';
+import { useAuth } from '../../hooks/auth';
 import * as Yup from 'yup';
 
 import { Button } from '../../components/Button';
@@ -23,7 +25,6 @@ import {
 	Footer,
 	HideButton,
 } from './styles';
-import { useNavigation } from '@react-navigation/native';
 
 export function SignIn() {
 	const [isKeyboardShown, setIsKeyboardShown] = useState(false);
@@ -32,6 +33,7 @@ export function SignIn() {
 
 	const theme = useTheme();
 	const navigation = useNavigation();
+	const { signIn } = useAuth();
 
 	async function handleSignIn() {
 		try {
@@ -45,7 +47,7 @@ export function SignIn() {
 			await schema.validate({ email, password });
 			Alert.alert('Tudo certo!');
 
-			//Fazer login
+			signIn({ email, password });
 		} catch (error) {
 			if (error instanceof Yup.ValidationError) {
 				Alert.alert('Opa', error.message);
