@@ -7,12 +7,12 @@ import DoneSvg from '../../assets/done.svg';
 import { ConfirmButton } from '../../components/ConfirmButton';
 
 import { Container, Content, Title, Message, Footer } from './styles';
-import { RootStackParamList } from '../../routes/stack.routes';
+import { AppStackRootParamList } from '../../routes/app.stack.routes';
 
 export interface ConfirmationProps {
 	title: string;
 	message: string;
-	nextNavigation: keyof RootStackParamList;
+	nextNavigation: keyof AppStackRootParamList;
 }
 
 export function Confirmation() {
