@@ -17,6 +17,7 @@ import LogoSvg from '../../assets/logo.svg';
 
 import { Container, Header } from './styles';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { useAuth } from '../../hooks/auth';
 
 const HEIGHT = Dimensions.get('window').height;
 const statusBarHeight = getStatusBarHeight();
@@ -24,6 +25,7 @@ const statusBarHeight = getStatusBarHeight();
 export function Splash() {
 	const navigation = useNavigation();
 	const theme = useTheme();
+	const { user } = useAuth();
 
 	const brandAnimation = useSharedValue(0);
 	const logoAnimation = useSharedValue(0);
@@ -85,16 +87,20 @@ export function Splash() {
 	});
 
 	function startApp() {
-		navigation.navigate('Home');
+		navigation.navigate(user ? 'Home' : 'SignIn');
 	}
 
 	useEffect(() => {
 		brandAnimation.value = withTiming(50, { duration: 800 }, () => {
 			logoAnimation.value = withTiming(50, { duration: 1200 }, () => {
-				startAppAnimation.value = withTiming(50, { duration: 400 }, () => {
-					'worklet';
-					runOnJS(startApp)();
-				});
+				startAppAnimation.value = withTiming(
+					user ? 50 : 0,
+					{ duration: 400 },
+					() => {
+						'worklet';
+						runOnJS(startApp)();
+					}
+				);
 			});
 		});
 	}, []);
