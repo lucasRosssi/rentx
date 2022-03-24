@@ -10,11 +10,10 @@ import PeopleSvg from '../assets/people.svg';
 
 import { Home } from '../screens/Home';
 import { MyCars } from '../screens/MyCars';
-import { AppStackRoutes } from './app.stack.routes';
 import { Platform } from 'react-native';
 
 export type AppTabRootParamList = {
-	HomeStack: undefined;
+	Home: undefined;
 	Profile: undefined;
 	MyCars: undefined;
 };
@@ -26,7 +25,7 @@ export function AppTabRoutes() {
 
 	return (
 		<Navigator
-			initialRouteName="HomeStack"
+			initialRouteName="Home"
 			screenOptions={{
 				headerShown: false,
 				tabBarShowLabel: false,
@@ -40,8 +39,8 @@ export function AppTabRoutes() {
 			}}
 		>
 			<Screen
-				name="HomeStack"
-				component={AppStackRoutes}
+				name="Home"
+				component={Home}
 				options={{
 					tabBarIcon: ({ color }) => (
 						<HomeSvg width={RFValue(24)} height={RFValue(24)} fill={color} />

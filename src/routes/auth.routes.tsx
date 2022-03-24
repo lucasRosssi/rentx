@@ -8,8 +8,8 @@ import { SignUpFirstStep } from '../screens/SignUp/SignUpFirstStep';
 import { SignUpSecondStep } from '../screens/SignUp/SignUpSecondStep';
 import { Confirmation, ConfirmationProps } from '../screens/Confirmation';
 
-import { CarDTO } from '../dtos/CarDTO';
 import { UserDTO } from '../dtos/UserDTO';
+import { AppStackRoutes } from './app.stack.routes';
 
 export type AuthRootParamList = {
 	Splash: undefined;
@@ -17,6 +17,7 @@ export type AuthRootParamList = {
 	SignUpFirstStep: undefined;
 	SignUpSecondStep: { user: UserDTO };
 	Confirmation: ConfirmationProps;
+	HomeStack: undefined;
 };
 
 const { Navigator, Screen } = createStackNavigator<AuthRootParamList>();
@@ -41,6 +42,7 @@ export function AuthRoutes() {
 			<Screen name="SignUpFirstStep" component={SignUpFirstStep} />
 			<Screen name="SignUpSecondStep" component={SignUpSecondStep} />
 			<Screen name="Confirmation" component={Confirmation} />
+			<Screen name="HomeStack" component={AppStackRoutes} />
 		</Navigator>
 	);
 }

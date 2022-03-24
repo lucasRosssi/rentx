@@ -11,10 +11,10 @@ import { Confirmation, ConfirmationProps } from '../screens/Confirmation';
 import { MyCars } from '../screens/MyCars';
 
 import { CarDTO } from '../dtos/CarDTO';
+import { AppTabRoutes } from './app.tab.routes';
 
 export type AppStackRootParamList = {
-	Splash: undefined;
-	Home: undefined;
+	HomeTab: undefined;
 	CarDetails: { car: CarDTO };
 	Scheduling: { car: CarDTO };
 	SchedulingDetails: { car: CarDTO; dates: string[] };
@@ -26,18 +26,13 @@ const { Navigator, Screen } = createStackNavigator<AppStackRootParamList>();
 
 export function AppStackRoutes() {
 	return (
-		<Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+		<Navigator
+			initialRouteName="HomeTab"
+			screenOptions={{ headerShown: false }}
+		>
 			<Screen
-				name="Splash"
-				component={Splash}
-				options={{
-					animationEnabled: false,
-				}}
-			/>
-
-			<Screen
-				name="Home"
-				component={Home}
+				name="HomeTab"
+				component={AppTabRoutes}
 				options={{
 					gestureEnabled: false,
 					animationEnabled: false,
