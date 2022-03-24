@@ -54,7 +54,7 @@ export function SignUpSecondStep() {
 				navigation.navigate('Confirmation', {
 					title: 'Conta criada',
 					message: 'Agora é só aproveitar',
-					nextNavigation: 'Home',
+					nextNavigation: 'HomeStack',
 				});
 			})
 			.catch(() => {
