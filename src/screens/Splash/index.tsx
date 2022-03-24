@@ -87,14 +87,14 @@ export function Splash() {
 	});
 
 	function startApp() {
-		navigation.navigate(user ? 'Home' : 'SignIn');
+		navigation.navigate(user.id ? 'HomeStack' : 'SignIn');
 	}
 
 	useEffect(() => {
 		brandAnimation.value = withTiming(50, { duration: 800 }, () => {
 			logoAnimation.value = withTiming(50, { duration: 1200 }, () => {
 				startAppAnimation.value = withTiming(
-					user ? 50 : 0,
+					user.id ? 50 : 0,
 					{ duration: 400 },
 					() => {
 						'worklet';
