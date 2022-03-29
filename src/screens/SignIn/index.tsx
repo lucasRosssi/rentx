@@ -47,7 +47,7 @@ export function SignIn() {
 			await schema.validate({ email, password });
 			Alert.alert('Tudo certo!');
 
-			signIn({ email, password });
+			signIn({ email, password }, () => navigation.navigate('HomeStack'));
 		} catch (error) {
 			if (error instanceof Yup.ValidationError) {
 				Alert.alert('Opa', error.message);
