@@ -27,10 +27,9 @@ interface SignInCredentials {
 
 interface AuthContextData {
 	user: User;
-	signIn: (
-		credentials: SignInCredentials,
-		callback: () => void
-	) => Promise<void>;
+	signIn: (credentials: SignInCredentials) => Promise<void>;
+	signOut: () => Promise<void>;
+	updateUser: (user: User) => Promise<void>;
 }
 
 interface AuthProviderProps {
@@ -42,10 +41,7 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 function AuthProvider({ children }: AuthProviderProps) {
 	const [data, setData] = useState<User>({} as User);
 
-	async function signIn(
-		{ email, password }: SignInCredentials,
-		callback: () => void
-	) {
+	async function signIn({ email, password }: SignInCredentials) {
 		try {
 			const response = await api.post('/sessions', {
 				email,
@@ -69,11 +65,40 @@ function AuthProvider({ children }: AuthProviderProps) {
 			});
 
 			setData({ ...user, token });
-			if (response) {
-				callback();
-			}
 		} catch (error) {
 			throw new Error(String(error));
+		}
+	}
+
+	async function signOut() {
+		try {
+			const userCollection = database.get<ModelUser>('users');
+			await database.write(async () => {
+				const userSelected = await userCollection.find(data.id);
+				await userSelected.destroyPermanently();
+			});
+
+			setData({} as User);
+		} catch (error) {
+			throw new Error(`${error}`);
+		}
+	}
+
+	async function updateUser(user: User) {
+		try {
+			const userCollection = database.get<ModelUser>('users');
+			await database.write(async () => {
+				const userSelected = await userCollection.find(user.id);
+				await userSelected.update((userData) => {
+					(userData.name = user.name),
+						(userData.driver_license = user.driver_license),
+						(userData.avatar = user.avatar);
+				});
+			});
+
+			setData(user);
+		} catch (error) {
+			throw new Error(`${error}`);
 		}
 	}
 
@@ -99,6 +124,8 @@ function AuthProvider({ children }: AuthProviderProps) {
 			value={{
 				user: data,
 				signIn,
+				signOut,
+				updateUser,
 			}}
 		>
 			{children}
