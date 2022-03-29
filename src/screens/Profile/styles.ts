@@ -16,7 +16,7 @@ export const Container = styled.View`
 export const Header = styled.View<OptionProps>`
 	width: 100%;
 	height: ${({ isKeyboardShown }) =>
-		isKeyboardShown ? RFValue(127) : RFValue(227)}px;
+		isKeyboardShown ? RFValue(127) : RFValue(200)}px;
 	background-color: ${({ theme }) => theme.colors.header};
 
 	align-items: center;
@@ -45,12 +45,14 @@ export const SignOutButton = styled(BorderlessButton)``;
 export const PhotoContainer = styled.View`
 	width: ${RFValue(180)}px;
 	height: ${RFValue(180)}px;
+	background-color: ${({ theme }) => theme.colors.shape};
 
 	border-radius: ${RFValue(90)}px;
 
-	background-color: ${({ theme }) => theme.colors.shape};
+	align-items: center;
+	justify-content: center;
 
-	margin-top: ${RFValue(43)}px;
+	margin-top: ${RFValue(16)}px;
 `;
 
 export const Photo = styled.Image`
@@ -73,10 +75,16 @@ export const PhotoButton = styled(RectButton)`
 	justify-content: center;
 `;
 
+export const Initials = styled.Text`
+	font-family: ${({ theme }) => theme.fonts.secondary_600};
+	font-size: ${RFValue(40)}px;
+	color: ${({ theme }) => theme.colors.main};
+`;
+
 export const Content = styled.View<OptionProps>`
 	padding: 0 24px;
 	margin-top: ${({ isKeyboardShown }) =>
-		isKeyboardShown ? 0 : RFValue(122)}px;
+		isKeyboardShown ? RFValue(10) : RFValue(100)}px;
 `;
 
 export const Options = styled.View`
@@ -111,4 +119,6 @@ export const OptionTitle = styled.Text<OptionProps>`
 		isActive ? theme.colors.header : theme.colors.text_detail};
 `;
 
-export const Section = styled.View``;
+export const Section = styled.View`
+	margin-bottom: 20px;
+`;

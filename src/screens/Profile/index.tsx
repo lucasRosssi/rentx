@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { Alert, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useTheme } from 'styled-components';
 import { useAuth } from '../../hooks/auth';
+import * as Yup from 'yup';
 
+import * as ImagePicker from 'expo-image-picker';
 import { Input } from '../../components/Input';
-
 import { BackButton } from '../../components/BackButton';
 import { Feather } from '@expo/vector-icons';
 
@@ -24,19 +25,86 @@ import {
 	OptionTitle,
 	RedBorder,
 	Section,
+	Initials,
 } from './styles';
+import { Button } from '../../components/Button';
 
 export function Profile() {
 	const theme = useTheme();
-	const { user } = useAuth();
+	const { user, signOut, updateUser } = useAuth();
 
 	const [isKeyboardShown, setIsKeyboardShown] = useState(false);
 	const [option, setOption] = useState('data');
+	const [photo, setPhoto] = useState(user.avatar);
+	const [name, setName] = useState(user.name);
+	const [driver_license, setDriver_license] = useState(user.driver_license);
 
-	function handleSignOut() {}
+	let userInitials = user.name
+		.trim()
+		.split(' ')
+		.map((names) => names[0])
+		.reduce((previousLetter, letter) => previousLetter + ' ' + letter);
+
+	function handleSignOut() {
+		Alert.alert('Sair', 'Tem certeza que deseja sair do RentX?', [
+			{
+				text: 'Não',
+			},
+			{
+				text: 'Sim',
+				onPress: signOut,
+			},
+		]);
+	}
 
 	function handleChangeOption(option: 'data' | 'password') {
 		setOption(option);
+	}
+
+	async function handleChangePhoto() {
+		const result = await ImagePicker.launchImageLibraryAsync({
+			mediaTypes: ImagePicker.MediaTypeOptions.Images,
+			allowsEditing: true,
+			aspect: [4, 4],
+			quality: 1,
+		});
+
+		if (result.cancelled) {
+			return;
+		}
+
+		if (result.uri) {
+			setPhoto(result.uri);
+		}
+	}
+
+	async function handleUpdateProfile() {
+		try {
+			const schema = Yup.object().shape({
+				name: Yup.string().required('Digite o seu nome'),
+				driver_license: Yup.string().required('Digite o número da sua CNH'),
+			});
+
+			const data = { name, driver_license };
+			await schema.validate(data);
+
+			await updateUser({
+				...user,
+				name,
+				driver_license,
+				avatar: photo,
+			});
+
+			Keyboard.dismiss();
+			Alert.alert('', 'Perfil atualizado');
+		} catch (error) {
+			console.log(error);
+			if (error instanceof Yup.ValidationError) {
+				Alert.alert('Opa', error.message);
+			} else {
+				Alert.alert('Erro', 'Não foi possível atualizar o perfil');
+			}
+		}
 	}
 
 	useEffect(() => {
@@ -72,10 +140,12 @@ export function Profile() {
 
 					{!isKeyboardShown && (
 						<PhotoContainer>
-							<Photo
-								source={{ uri: 'https://www.github.com/lucasRosssi.png' }}
-							/>
-							<PhotoButton>
+							{photo ? (
+								<Photo source={{ uri: photo }} />
+							) : (
+								<Initials>{userInitials}</Initials>
+							)}
+							<PhotoButton onPress={handleChangePhoto}>
 								<Feather
 									name="camera"
 									color={theme.colors.shape}
@@ -115,6 +185,7 @@ export function Profile() {
 									autoCapitalize="words"
 									autoCorrect={false}
 									defaultValue={user.name}
+									onChangeText={setName}
 								/>
 								<Input
 									editable={false}
@@ -128,6 +199,7 @@ export function Profile() {
 									placeholder="CNH"
 									keyboardType="numeric"
 									defaultValue={user.driver_license}
+									onChangeText={setDriver_license}
 								/>
 							</>
 						)}
@@ -139,6 +211,8 @@ export function Profile() {
 							</>
 						)}
 					</Section>
+
+					<Button title="Salvar alterações" onPress={handleUpdateProfile} />
 				</Content>
 			</Container>
 		</TouchableWithoutFeedback>
