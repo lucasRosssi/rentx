@@ -2,7 +2,6 @@ import React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Splash } from '../screens/Splash';
 import { SignIn } from '../screens/SignIn';
 import { SignUpFirstStep } from '../screens/SignUp/SignUpFirstStep';
 import { SignUpSecondStep } from '../screens/SignUp/SignUpSecondStep';
@@ -10,9 +9,10 @@ import { Confirmation, ConfirmationProps } from '../screens/Confirmation';
 
 import { UserDTO } from '../dtos/UserDTO';
 import { AppStackRoutes } from './app.stack.routes';
+import { AuthSplash } from '../screens/AuthSplash';
 
 export type AuthRootParamList = {
-	Splash: undefined;
+	AuthSplash: undefined;
 	SignIn: undefined;
 	SignUpFirstStep: undefined;
 	SignUpSecondStep: { user: UserDTO };
@@ -24,10 +24,13 @@ const { Navigator, Screen } = createStackNavigator<AuthRootParamList>();
 
 export function AuthRoutes() {
 	return (
-		<Navigator initialRouteName="Splash" screenOptions={{ headerShown: false }}>
+		<Navigator
+			initialRouteName="AuthSplash"
+			screenOptions={{ headerShown: false }}
+		>
 			<Screen
-				name="Splash"
-				component={Splash}
+				name="AuthSplash"
+				component={AuthSplash}
 				options={{
 					animationEnabled: false,
 				}}

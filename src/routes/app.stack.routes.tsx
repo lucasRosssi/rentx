@@ -2,8 +2,7 @@ import React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Splash } from '../screens/Splash';
-import { Home } from '../screens/Home';
+import { AppSplash } from '../screens/AppSplash';
 import { CarDetails } from '../screens/CarDetails';
 import { Scheduling } from '../screens/Scheduling';
 import { SchedulingDetails } from '../screens/SchedulingDetails';
@@ -14,7 +13,7 @@ import { CarDTO } from '../dtos/CarDTO';
 import { AppTabRoutes } from './app.tab.routes';
 
 export type AppStackRootParamList = {
-	Splash: undefined;
+	AppSplash: undefined;
 	HomeTab: undefined;
 	CarDetails: { car: CarDTO };
 	Scheduling: { car: CarDTO };
@@ -27,7 +26,12 @@ const { Navigator, Screen } = createStackNavigator<AppStackRootParamList>();
 
 export function AppStackRoutes() {
 	return (
-		<Navigator initialRouteName="Splash" screenOptions={{ headerShown: false }}>
+		<Navigator
+			initialRouteName="AppSplash"
+			screenOptions={{ headerShown: false }}
+		>
+			<Screen name="AppSplash" component={AppSplash} />
+
 			<Screen
 				name="HomeTab"
 				component={AppTabRoutes}
