@@ -14,6 +14,7 @@ import { CarDTO } from '../dtos/CarDTO';
 import { AppTabRoutes } from './app.tab.routes';
 
 export type AppStackRootParamList = {
+	Splash: undefined;
 	HomeTab: undefined;
 	CarDetails: { car: CarDTO };
 	Scheduling: { car: CarDTO };
@@ -26,10 +27,7 @@ const { Navigator, Screen } = createStackNavigator<AppStackRootParamList>();
 
 export function AppStackRoutes() {
 	return (
-		<Navigator
-			initialRouteName="HomeTab"
-			screenOptions={{ headerShown: false }}
-		>
+		<Navigator initialRouteName="Splash" screenOptions={{ headerShown: false }}>
 			<Screen
 				name="HomeTab"
 				component={AppTabRoutes}

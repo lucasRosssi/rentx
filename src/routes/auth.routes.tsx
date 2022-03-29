@@ -42,7 +42,13 @@ export function AuthRoutes() {
 			<Screen name="SignUpFirstStep" component={SignUpFirstStep} />
 			<Screen name="SignUpSecondStep" component={SignUpSecondStep} />
 			<Screen name="Confirmation" component={Confirmation} />
-			<Screen name="HomeStack" component={AppStackRoutes} />
+			<Screen
+				name="HomeStack"
+				component={AppStackRoutes}
+				options={{
+					animationEnabled: false,
+				}}
+			/>
 		</Navigator>
 	);
 }
