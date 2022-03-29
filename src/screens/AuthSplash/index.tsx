@@ -8,23 +8,17 @@ import Animated, {
 	runOnJS,
 } from 'react-native-reanimated';
 import { useNavigation } from '@react-navigation/native';
-import { useTheme } from 'styled-components';
 
-import { StatusBar, Dimensions } from 'react-native';
+import { StatusBar } from 'react-native';
 
 import BrandSvg from '../../assets/brand.svg';
 import LogoSvg from '../../assets/logo.svg';
 
 import { Container, Header } from './styles';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { useAuth } from '../../hooks/auth';
 
-const HEIGHT = Dimensions.get('window').height;
-const statusBarHeight = getStatusBarHeight();
-
-export function Splash() {
+export function AuthSplash() {
 	const navigation = useNavigation();
-	const theme = useTheme();
 	const { user } = useAuth();
 
 	const brandAnimation = useSharedValue(0);
@@ -56,51 +50,18 @@ export function Splash() {
 		};
 	});
 
-	const logoStyle_2 = useAnimatedStyle(() => {
-		return {
-			transform: [
-				{
-					scale: interpolate(startAppAnimation.value, [0, 50], [1, 0.6]),
-				},
-				{
-					translateY: interpolate(startAppAnimation.value, [0, 50], [0, -527]),
-				},
-				{
-					translateX: interpolate(startAppAnimation.value, [0, 50], [0, -197]),
-				},
-			],
-		};
-	});
-
-	const whiteBackgroundStyle = useAnimatedStyle(() => {
-		return {
-			transform: [
-				{
-					translateY: interpolate(
-						startAppAnimation.value,
-						[0, 50],
-						[0, 113 - HEIGHT - statusBarHeight]
-					),
-				},
-			],
-		};
-	});
-
 	function startApp() {
-		navigation.navigate(user.id ? 'HomeStack' : 'SignIn');
+		if (user.id) {
+			return;
+		}
+		navigation.navigate('SignIn');
 	}
 
 	useEffect(() => {
 		brandAnimation.value = withTiming(50, { duration: 800 }, () => {
 			logoAnimation.value = withTiming(50, { duration: 1200 }, () => {
-				startAppAnimation.value = withTiming(
-					user.id ? 50 : 0,
-					{ duration: 400 },
-					() => {
-						'worklet';
-						runOnJS(startApp)();
-					}
-				);
+				'worklet';
+				runOnJS(startApp)();
 			});
 		});
 	}, []);
@@ -119,25 +80,9 @@ export function Splash() {
 				<BrandSvg width={80} height={50} />
 			</Animated.View>
 
-			<Animated.View
-				style={[logoStyle_1, logoStyle_2, { position: 'absolute' }]}
-			>
+			<Animated.View style={[logoStyle_1, { position: 'absolute' }]}>
 				<LogoSvg width={180} height={20} />
 			</Animated.View>
-
-			<Animated.View
-				style={[
-					whiteBackgroundStyle,
-					{
-						flex: 1,
-						height: '100%',
-						width: '100%',
-						position: 'absolute',
-						bottom: -HEIGHT - statusBarHeight,
-						backgroundColor: theme.colors.background_primary,
-					},
-				]}
-			/>
 		</Container>
 	);
 }
