@@ -27,7 +27,10 @@ interface SignInCredentials {
 
 interface AuthContextData {
 	user: User;
-	signIn: (credentials: SignInCredentials) => Promise<void>;
+	signIn: (
+		credentials: SignInCredentials,
+		callback: () => void
+	) => Promise<void>;
 }
 
 interface AuthProviderProps {
@@ -39,7 +42,10 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 function AuthProvider({ children }: AuthProviderProps) {
 	const [data, setData] = useState<User>({} as User);
 
-	async function signIn({ email, password }: SignInCredentials) {
+	async function signIn(
+		{ email, password }: SignInCredentials,
+		callback: () => void
+	) {
 		try {
 			const response = await api.post('/sessions', {
 				email,
@@ -63,6 +69,9 @@ function AuthProvider({ children }: AuthProviderProps) {
 			});
 
 			setData({ ...user, token });
+			if (response) {
+				callback();
+			}
 		} catch (error) {
 			throw new Error(String(error));
 		}
@@ -83,7 +92,7 @@ function AuthProvider({ children }: AuthProviderProps) {
 		}
 
 		loadUserData();
-	});
+	}, []);
 
 	return (
 		<AuthContext.Provider
