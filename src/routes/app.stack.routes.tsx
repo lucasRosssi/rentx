@@ -9,13 +9,14 @@ import { SchedulingDetails } from '../screens/SchedulingDetails';
 import { Confirmation, ConfirmationProps } from '../screens/Confirmation';
 import { MyCars } from '../screens/MyCars';
 
-import { CarDTO } from '../dtos/CarDTO';
+import { Car as ModelCar } from '../database/models/Car';
 import { AppTabRoutes } from './app.tab.routes';
+import { CarDTO } from '../dtos/CarDTO';
 
 export type AppStackRootParamList = {
 	AppSplash: undefined;
 	HomeTab: undefined;
-	CarDetails: { car: CarDTO };
+	CarDetails: { car: ModelCar };
 	Scheduling: { car: CarDTO };
 	SchedulingDetails: { car: CarDTO; dates: string[] };
 	Confirmation: ConfirmationProps;
