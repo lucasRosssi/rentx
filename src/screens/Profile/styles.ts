@@ -122,3 +122,10 @@ export const OptionTitle = styled.Text<OptionProps>`
 export const Section = styled.View`
 	margin-bottom: 20px;
 `;
+
+export const OfflineInfo = styled.Text`
+	font-family: ${({ theme }) => theme.fonts.primary_400};
+	font-size: ${RFValue(10)}px;
+	color: ${({ theme }) => theme.colors.main};
+	text-align: center;
+`;

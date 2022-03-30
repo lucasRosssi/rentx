@@ -16,13 +16,16 @@ import {
 	Type,
 	CarImage,
 } from './styles';
+import { Car as ModelCar } from '../../database/models/Car';
+import { useNetInfo } from '@react-native-community/netinfo';
 
 interface CarProps extends PressableProps {
-	data: CarDTO;
+	data: ModelCar;
 }
 
 export function Car({ data, disabled, ...rest }: CarProps) {
 	const MotorIcon = getAccessoryIcon(data.fuel_type);
+	const netInfo = useNetInfo();
 
 	return (
 		<Pressable {...rest}>
@@ -34,7 +37,9 @@ export function Car({ data, disabled, ...rest }: CarProps) {
 					<About>
 						<Rent>
 							<Period>{data.period}</Period>
-							<Price>R$ {data.price}</Price>
+							<Price>
+								R$ {netInfo.isConnected === true ? data.price : '--'}
+							</Price>
 						</Rent>
 
 						<Type>

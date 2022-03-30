@@ -3,12 +3,14 @@ import { Alert, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useTheme } from 'styled-components';
 import { useAuth } from '../../hooks/auth';
+import { useNetInfo } from '@react-native-community/netinfo';
 import * as Yup from 'yup';
 
 import * as ImagePicker from 'expo-image-picker';
 import { Input } from '../../components/Input';
 import { BackButton } from '../../components/BackButton';
 import { Feather } from '@expo/vector-icons';
+import { Button } from '../../components/Button';
 
 import {
 	Container,
@@ -26,11 +28,12 @@ import {
 	RedBorder,
 	Section,
 	Initials,
+	OfflineInfo,
 } from './styles';
-import { Button } from '../../components/Button';
 
 export function Profile() {
 	const theme = useTheme();
+	const netInfo = useNetInfo();
 	const { user, signOut, updateUser } = useAuth();
 
 	const [isKeyboardShown, setIsKeyboardShown] = useState(false);
@@ -58,6 +61,9 @@ export function Profile() {
 	}
 
 	function handleChangeOption(option: 'data' | 'password') {
+		if (netInfo.isConnected === false && option === 'password') {
+			return;
+		}
 		setOption(option);
 	}
 
@@ -122,6 +128,12 @@ export function Profile() {
 		};
 	}, []);
 
+	useEffect(() => {
+		if (netInfo.isConnected === false) {
+			setOption('data');
+		}
+	}, [netInfo.isConnected]);
+
 	return (
 		<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 			<Container>
@@ -167,7 +179,7 @@ export function Profile() {
 						</Option>
 						<Option
 							onPress={() => handleChangeOption('password')}
-							disabled={option === 'password'}
+							disabled={option === 'password' || netInfo.isConnected === false}
 						>
 							<OptionTitle isActive={option === 'password'}>
 								Trocar senha
@@ -213,6 +225,12 @@ export function Profile() {
 					</Section>
 
 					<Button title="Salvar alterações" onPress={handleUpdateProfile} />
+
+					{netInfo.isConnected === false && (
+						<OfflineInfo>
+							Para alterar a senha, conecte-se à internet
+						</OfflineInfo>
+					)}
 				</Content>
 			</Container>
 		</TouchableWithoutFeedback>
