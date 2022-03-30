@@ -22,7 +22,7 @@ export function getAccessoryIcon(type: string) {
 			return EnergySvg;
 		case 'hybrid_motor':
 			return HybridSvg;
-		case 'gear':
+		case 'exchange':
 			return GearSvg;
 		case 'seats':
 			return PeopleSvg;
