@@ -17,7 +17,7 @@ export type AppStackRootParamList = {
 	AppSplash: undefined;
 	HomeTab: undefined;
 	CarDetails: { car: ModelCar };
-	Scheduling: { car: CarDTO };
+	Scheduling: { car: ModelCar };
 	SchedulingDetails: { car: CarDTO; dates: string[] };
 	Confirmation: ConfirmationProps;
 	MyCars: undefined;
